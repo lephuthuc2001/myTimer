@@ -1,6 +1,6 @@
 :root {
-  --text-shadow-color: #ff9c99;
-  --text-main-color: #d74742;
+  --text-shadow-color: #fff;
+  --text-main-color: #fff;
 }
 * {
   box-sizing: border-box;
@@ -15,6 +15,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #212529;
 }
 
 code {
@@ -24,33 +25,35 @@ code {
 
 h1 {
   color: var(--text-main-color);
-  font-family: "Rouge Script", cursive;
+  font-family: "Times New Roman", sans-serif;
   font-size: 130px;
   font-weight: normal;
   line-height: 48px;
   margin: 0 0 50px;
   text-align: center;
-  text-shadow: 1px 1px 2px var(--text-shadow-color);
 }
 
 p {
-  color: #ffffff;
+  color: #862e9c;
   font-family: "Carme", sans-serif;
   font-size: 16px;
+  text-align: center;
 }
 
 .container {
   margin: auto;
   max-width: 1048px;
   height: 100vh;
+  max-height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 20px;
 }
 .timer__wrapper {
   border-radius: 24px;
-  background-color: var(--text-shadow-color);
+  background-color: var(--text-main-color);
   box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px,
     rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
 }
@@ -65,15 +68,16 @@ p {
   display: flex;
   width: 30vw;
   padding: 1em;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 32px;
   align-items: center;
 }
 .button {
-  color: white;
-  background-color: var(--text-shadow-color);
+  color: #fff;
+  background-color: #862e9c;
   font-size: 1.5em;
   border-radius: 100vh;
-  border: 1px solid white;
+  border: 1px solid #862e9c;
   padding: 1em;
   transition: ease-in-out 0.3s;
 }
@@ -107,4 +111,14 @@ p {
     font-size: 3.8em;
     padding-left: 0;
   }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #862e9c;
+  border-radius: 20px;
 }

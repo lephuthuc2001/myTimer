@@ -1,8 +1,15 @@
 export const formatTime = (time) => {
-  const getSeconds = "Your code here";
-  const minutes = "Your code here";
-  const getMinutes = "Your code here";
-  const getHours = "Your code here";
+  const getSeconds = Math.round((time % 60) * 100) / 100;
+  const getMinutes = Math.floor(time / 60);
+  const getHours = Math.floor(time / 3600);
 
-  return `${getHours} : ${getMinutes} : ${getSeconds}`;
+  return `${getHours < 10 ? `0${getHours}` : getHours} : ${
+    getMinutes < 10 ? `0${getMinutes}` : getMinutes
+  } : ${
+    getSeconds < 10
+      ? `0${getSeconds % 1 === 0 ? `${getSeconds}.0` : getSeconds}`
+      : getSeconds % 1 === 0
+      ? `${getSeconds}.0`
+      : getSeconds
+  }`;
 };

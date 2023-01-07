@@ -1,0 +1,36 @@
+.list {
+  list-style: none;
+  border-radius: 10px;
+  background-color: #f8f9fa;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+  max-width: 85%;
+  width: 35rem;
+  max-height: 20%;
+  height: auto;
+  padding: 10px 20px;
+  color: #862e9c;
+  font: inherit;
+  font-size: 1.3rem;
+  overflow-y: scroll;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+.info * {
+  display: inline-block;
+}
+.interval {
+  flex-basis: 1 0 200px;
+  text-align: right;
+  display: inline-block;
+}
