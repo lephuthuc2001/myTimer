@@ -20,7 +20,7 @@ const useTimer = (ini = 0) => {
   }, []);
 
   useEffect(() => {
-    refCount.current++;
+    refCount.current = refCount.current + 1;
     if (records[0]) {
       refInterval.current = records[0].splitTime;
     }
