@@ -15,27 +15,15 @@ const useTimer = (ini = 0) => {
 
   const [records, setRecords] = useState([]);
 
-  const splitHandler = () => {
-    setRecords((prev) => {
-      return [
-        {
-          count:
-            refCount.current < 10 ? `0${refCount.current}` : refCount.current,
-          splitTime: time,
-          interval: time - refInterval.current,
-        },
-        ...prev,
-      ];
-    });
-  };
-
   useEffect(() => {
     canSplit.current.disabled = true;
   }, []);
 
   useEffect(() => {
-    refInterval.current = time + 0.1;
     refCount.current++;
+    if (records[0]) {
+      refInterval.current = records[0].splitTime;
+    }
   }, [records]);
 
   useEffect(() => {
@@ -50,6 +38,21 @@ const useTimer = (ini = 0) => {
       clearInterval(intervalID);
     };
   }, [isStart]);
+
+  const splitHandler = () => {
+    setRecords((prev) => {
+      const newRecords = [
+        {
+          count:
+            refCount.current < 10 ? `0${refCount.current}` : refCount.current,
+          splitTime: time,
+          interval: time - refInterval.current,
+        },
+        ...prev,
+      ];
+      return newRecords;
+    });
+  };
 
   const startTimer = () => {
     setIsStart(true);
