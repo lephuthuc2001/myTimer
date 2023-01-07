@@ -15,7 +15,7 @@ function ListRecords({ records }) {
               <div>{formatTime(record.splitTime)}</div>
             </div>
             <div className={listStyle.interval}>
-              {`+${formatTime(record.interval)}`}
+              {`+ ${formatTime(record.interval)}`}
             </div>
           </li>
         );
